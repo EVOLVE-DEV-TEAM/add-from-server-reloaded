@@ -1,0 +1,300 @@
+/**
+ * Pro teaser / freemium UI styles.
+ *
+ * @package Add_From_Server_Reloaded
+ * @since   5.4.2
+ */
+
+/* Brand badge */
+.afsrreloaded-pro-badge {
+	display: inline-block;
+	margin-left: 6px;
+	padding: 1px 7px;
+	border-radius: 3px;
+	background: #183ad6;
+	color: #fff;
+	font-size: 10px;
+	font-weight: 600;
+	line-height: 1.6;
+	letter-spacing: 0.04em;
+	vertical-align: middle;
+	text-transform: uppercase;
+}
+
+/* Import page summary */
+.afsrreloaded-pro-import-summary {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	gap: 14px 18px;
+	margin: 0 0 16px;
+	padding: 14px 16px;
+	border: 1px solid #c3c4c7;
+	border-left: 4px solid #183ad6;
+	border-radius: 2px;
+	background: #f6f7f7;
+}
+
+.afsrreloaded-pro-import-summary__icon .dashicons {
+	width: 28px;
+	height: 28px;
+	font-size: 28px;
+	color: #183ad6;
+}
+
+.afsrreloaded-pro-import-summary__body {
+	flex: 1 1 220px;
+	min-width: 0;
+}
+
+.afsrreloaded-pro-import-summary__body strong {
+	display: inline-flex;
+	align-items: center;
+	gap: 4px;
+	font-size: 14px;
+	color: #000;
+}
+
+.afsrreloaded-pro-import-summary__body p {
+	margin: 4px 0 0;
+	color: #000;
+	font-size: 13px;
+	line-height: 1.45;
+}
+
+.afsrreloaded-pro-import-summary__actions {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 8px;
+}
+
+/* Settings short card */
+.afsrreloaded-pro-settings-card {
+	margin-top: 28px;
+	padding: 18px 20px;
+	border: 1px solid #c3c4c7;
+	border-left: 4px solid #183ad6;
+	border-radius: 2px;
+	background: #fff;
+}
+
+.afsrreloaded-pro-settings-card h3 {
+	display: flex;
+	align-items: center;
+	gap: 6px;
+	margin: 0 0 8px;
+}
+
+.afsrreloaded-pro-settings-card h3 .dashicons {
+	color: #183ad6;
+}
+
+.afsrreloaded-pro-settings-card p {
+	margin: 0 0 12px;
+	color: #000;
+	font-size: 14px;
+	line-height: 1.5;
+}
+
+/* Pro Features page */
+.afsrreloaded-pro-features-page .afsrreloaded-pro-features-hero {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: flex-start;
+	justify-content: space-between;
+	gap: 16px 24px;
+	margin: 8px 0 24px;
+	padding: 20px 22px;
+	border: 1px solid #c3c4c7;
+	border-radius: 4px;
+	background: #fff;
+	box-shadow: 0 1px 1px rgba(0, 0, 0, 0.04);
+}
+
+.afsrreloaded-pro-features-hero__text {
+	flex: 1 1 280px;
+	max-width: 720px;
+}
+
+.afsrreloaded-pro-features-hero__text h1 {
+	display: flex;
+	align-items: center;
+	flex-wrap: wrap;
+	gap: 8px;
+	margin: 0 0 8px;
+	padding: 0;
+	font-size: 23px;
+}
+
+.afsrreloaded-pro-features-hero__text p {
+	margin: 0;
+	color: #000;
+	font-size: 14px;
+	line-height: 1.55;
+}
+
+.afsrreloaded-pro-features-hero__cta {
+	margin: 0;
+}
+
+.afsrreloaded-pro-features-grid {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	display: grid;
+	grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+	gap: 12px;
+}
+
+.afsrreloaded-pro-feature-card {
+	display: flex;
+	align-items: flex-start;
+	gap: 12px;
+	width: 100%;
+	min-height: 100%;
+	margin: 0;
+	padding: 16px;
+	border: 1px solid #dcdcde;
+	border-radius: 4px;
+	background: #fff;
+	text-align: left;
+	cursor: pointer;
+	transition: border-color 0.12s ease, box-shadow 0.12s ease, background 0.12s ease;
+}
+
+.afsrreloaded-pro-feature-card:hover,
+.afsrreloaded-pro-feature-card:focus {
+	border-color: #183ad6;
+	background: #f0f3ff;
+	outline: none;
+	box-shadow: 0 0 0 1px #183ad6;
+}
+
+.afsrreloaded-pro-feature-card__lock {
+	flex: 0 0 auto;
+	margin-top: 2px;
+	color: #000;
+}
+
+.afsrreloaded-pro-feature-card__text {
+	display: flex;
+	flex-direction: column;
+	flex: 1;
+	gap: 4px;
+	min-width: 0;
+}
+
+.afsrreloaded-pro-feature-card__text strong {
+	color: #000;
+	font-size: 14px;
+}
+
+.afsrreloaded-pro-feature-card__text span {
+	color: #000;
+	font-size: 13px;
+	line-height: 1.45;
+}
+
+.afsrreloaded-pro-features-footer-cta {
+	margin: 28px 0 8px;
+	text-align: center;
+}
+
+/* Modal */
+.afsrreloaded-pro-modal[hidden] {
+	display: none !important;
+}
+
+.afsrreloaded-pro-modal {
+	position: fixed;
+	inset: 0;
+	z-index: 100100;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.afsrreloaded-pro-modal-backdrop {
+	position: absolute;
+	inset: 0;
+	background: rgba(0, 0, 0, 0.55);
+}
+
+.afsrreloaded-pro-modal-dialog {
+	position: relative;
+	z-index: 1;
+	width: 100%;
+	max-width: 460px;
+	margin: 20px;
+	padding: 28px 28px 24px;
+	border-radius: 4px;
+	background: #fff;
+	box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+	text-align: center;
+}
+
+.afsrreloaded-pro-modal-close {
+	position: absolute;
+	top: 8px;
+	right: 8px;
+	padding: 4px;
+	border: 0;
+	background: transparent;
+	cursor: pointer;
+	color: #000;
+}
+
+.afsrreloaded-pro-modal-close:hover {
+	color: #000;
+}
+
+.afsrreloaded-pro-modal-icon .dashicons {
+	width: 40px;
+	height: 40px;
+	font-size: 40px;
+	color: #183ad6;
+}
+
+.afsrreloaded-pro-modal-dialog h2 {
+	margin: 10px 0 8px;
+	font-size: 20px;
+}
+
+.afsrreloaded-pro-modal-feature {
+	margin: 0 0 8px;
+	font-weight: 600;
+	font-size: 15px;
+	color: #000;
+}
+
+.afsrreloaded-pro-modal-desc {
+	margin: 0 0 12px;
+	color: #000;
+	font-size: 14px;
+	line-height: 1.5;
+}
+
+.afsrreloaded-pro-modal-copy {
+	margin: 0 0 20px;
+	color: #000;
+	font-size: 13px;
+	line-height: 1.5;
+}
+
+.afsrreloaded-pro-modal-actions .button {
+	margin: 0 4px 6px;
+}
+
+body.afsrreloaded-pro-modal-open {
+	overflow: hidden;
+}
+
+@media screen and (max-width: 782px) {
+	.afsrreloaded-pro-import-summary {
+		align-items: flex-start;
+	}
+
+	.afsrreloaded-pro-features-grid {
+		grid-template-columns: 1fr;
+	}
+}

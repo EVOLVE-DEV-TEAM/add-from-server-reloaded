@@ -2,7 +2,7 @@
 # This file is distributed under the GPL-3.0+.
 msgid ""
 msgstr ""
-"Project-Id-Version: Add From Server Reloaded 5.0.0\n"
+"Project-Id-Version: Add From Server Lite 6.0.0\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/add-from-server-reloaded\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -19,7 +19,7 @@ msgstr ""
 #: class.add-from-server.php:117
 #: class.add-from-server.php:161
 #: old-versions.php:44
-msgid "Add From Server Reloaded"
+msgid "Add From Server Lite"
 msgstr ""
 
 #. Plugin URI of the plugin
