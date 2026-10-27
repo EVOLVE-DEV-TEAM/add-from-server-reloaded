@@ -1,6 +1,6 @@
 <?php
 /**
- * Uninstall Add From Server Reloaded
+ * Uninstall Add From Server Lite
  *
  * Removes all plugin data when the plugin is deleted.
  *
@@ -18,16 +18,48 @@ if ( ! defined( 'WP_UNINSTALL_PLUGIN' ) ) {
 /**
  * Delete plugin options.
  *
- * Removes all options created by the plugin from the WordPress options table.
- *
  * @since 5.0.0
  */
 function afsrreloaded_delete_plugin_options() {
-	// Delete the root directory setting.
 	delete_option( 'afsrreloaded_root_directory' );
-	
-	// Delete legacy option from original plugin (if it exists).
+	delete_option( 'afsrreloaded_db_version' );
 	delete_option( 'frmsvr_root' );
+	// Legacy Multisite network setting (feature removed).
+	if ( function_exists( 'delete_site_option' ) ) {
+		delete_site_option( 'afsrreloaded_network_settings' );
+	}
+}
+
+/**
+ * Drop custom database tables.
+ *
+ * @since 5.3.0
+ */
+function afsrreloaded_drop_tables() {
+	global $wpdb;
+
+	$jobs_table  = $wpdb->prefix . 'afsrreloaded_jobs';
+	$items_table = $wpdb->prefix . 'afsrreloaded_job_items';
+
+	// phpcs:ignore WordPress.DB.DirectDatabaseQuery.SchemaChange, WordPress.DB.DirectDatabaseQuery.DirectQuery, WordPress.DB.DirectDatabaseQuery.NoCaching
+	$wpdb->query( $wpdb->prepare( 'DROP TABLE IF EXISTS %i', $items_table ) );
+	// phpcs:ignore WordPress.DB.DirectDatabaseQuery.SchemaChange, WordPress.DB.DirectDatabaseQuery.DirectQuery, WordPress.DB.DirectDatabaseQuery.NoCaching
+	$wpdb->query( $wpdb->prepare( 'DROP TABLE IF EXISTS %i', $jobs_table ) );
+}
+
+/**
+ * Clear scheduled cron events.
+ *
+ * @since 5.3.0
+ */
+function afsrreloaded_clear_cron() {
+	$timestamp = wp_next_scheduled( 'afsrreloaded_process_import_jobs' );
+	while ( $timestamp ) {
+		wp_unschedule_event( $timestamp, 'afsrreloaded_process_import_jobs' );
+		$timestamp = wp_next_scheduled( 'afsrreloaded_process_import_jobs' );
+	}
+
+	wp_clear_scheduled_hook( 'afsrreloaded_process_import_jobs_soon' );
 }
 
 /**
@@ -36,20 +68,15 @@ function afsrreloaded_delete_plugin_options() {
  * @since 5.0.0
  */
 function afsrreloaded_uninstall() {
-	// Check if user has permission to delete plugins.
 	if ( ! current_user_can( 'delete_plugins' ) ) {
 		return;
 	}
 
-	// Delete all plugin options.
 	afsrreloaded_delete_plugin_options();
+	afsrreloaded_drop_tables();
+	afsrreloaded_clear_cron();
 
-	// Note: We don't delete imported media files because they belong to the user.
-	// The files imported to Media Library remain after plugin deletion.
-	
-	// Note: Cookies are client-side and will expire naturally.
-	// No server-side cleanup needed for cookies.
+	// Imported media files are intentionally kept.
 }
 
-// Run the uninstall function.
 afsrreloaded_uninstall();

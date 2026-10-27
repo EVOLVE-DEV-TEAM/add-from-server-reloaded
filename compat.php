@@ -7,6 +7,11 @@
  * @since   4.0.0
  */
 
+// If this file is called directly, abort.
+if ( ! defined( 'ABSPATH' ) ) {
+	exit;
+}
+
 if ( ! function_exists( 'str_starts_with' ) ) {
 	/**
 	 * Check if string starts with substring.
