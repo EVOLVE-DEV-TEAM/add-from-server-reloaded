@@ -75,7 +75,7 @@ require __DIR__ . '/compat.php';
 
 // Old versions of WordPress or PHP.
 if (
-	version_compare( $GLOBALS['wp_version'], AFSRRELOADED_MIN_WP, '<' )
+	version_compare( get_bloginfo( 'version' ), AFSRRELOADED_MIN_WP, '<' )
 	||
 	version_compare( phpversion(), AFSRRELOADED_MIN_PHP, '<' )
 ) {
