@@ -35,15 +35,15 @@ defined( 'AFSRRELOADED_PLUGIN_DIR_URL' ) || define( 'AFSRRELOADED_PLUGIN_DIR_URL
  *
  * @since 5.3.0
  *
- * @param string $class Class name.
+ * @param string $class_name Class name.
  */
 spl_autoload_register(
-	static function ( $class ) {
-		if ( 0 !== strpos( $class, 'AFSRReloaded\\' ) ) {
+	static function ( $class_name ) {
+		if ( 0 !== strpos( $class_name, 'AFSRReloaded\\' ) ) {
 			return;
 		}
 
-		$relative = strtolower( str_replace( array( 'AFSRReloaded\\', '_' ), array( '', '-' ), $class ) );
+		$relative = strtolower( str_replace( array( 'AFSRReloaded\\', '_' ), array( '', '-' ), $class_name ) );
 		$map      = array(
 			'plugin'                => 'class.add-from-server.php',
 			'features'              => 'includes/class-features.php',
