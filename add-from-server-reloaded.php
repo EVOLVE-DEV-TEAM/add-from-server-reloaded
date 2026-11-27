@@ -4,7 +4,7 @@
  * Plugin URI:        https://wordpress.org/plugins/add-from-server-reloaded/
  * Description:       Bypass WordPress upload limit. Import large files from your server to Media Library with reliable chunked imports. Pair with Add From Server Pro (AFS Pro) for background jobs and advanced queue tools.
  * Version:           6.1.0
- * Author:            eLearning evolve
+ * Author:            EVOLVE
  * Author URI:        https://elearningevolve.com/about/
  * License:           GPL-3.0+
  * License URI:       https://www.gnu.org/licenses/gpl-3.0.html
@@ -12,7 +12,7 @@
  * Requires PHP:      7.4
  * Domain Path:       /languages
  * Requires at least: 6.2
- * Tested up to:      7.1
+ * Tested up to:      7.1.5
  *
  * @since             4.0.0
  * @package           Add From Server Lite
